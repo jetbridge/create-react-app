@@ -288,7 +288,7 @@ module.exports = function(
     );
   }
   console.log();
-  console.log('Happy hacking!');
+  console.log(chalk.green("Let's Make It Happen!"));
 };
 
 function isReactInstalled(appPackage) {
