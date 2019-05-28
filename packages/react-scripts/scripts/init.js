@@ -116,7 +116,6 @@ module.exports = function(
     prettier: 'latest',
     eslint: 'latest',
     husky: 'latest',
-    'babel-loader': '8.0.5',
   };
 
   appPackage.husky = {
@@ -139,7 +138,6 @@ module.exports = function(
     lint: 'eslint src/**/*.ts src/**/*.tsx',
     fix:
       'prettier --write src/**/*.ts src/**/*.tsx && eslint --fix src/**/*.ts src/**/*.tsx',
-    storybook: 'start-storybook -p 6006',
   };
 
   // Setup the browsers list
