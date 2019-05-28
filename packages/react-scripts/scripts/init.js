@@ -91,6 +91,40 @@ module.exports = function(
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
 
+  appPackage.dependencies = {
+    ...appPackage.dependencies,
+    axios: 'latest',
+    classnames: '2.2.6',
+  };
+
+  appPackage.devDependencies = {
+    '@storybook/addon-actions': 'latest',
+    '@storybook/addon-centered': 'latest',
+    '@storybook/addon-info': 'latest',
+    '@storybook/addon-links': 'latest',
+    '@storybook/addons': 'latest',
+    '@storybook/core': 'latest',
+    '@storybook/react': 'latest',
+    '@types/storybook__react': 'latest',
+    'awesome-typescript-loader': 'latest',
+    'react-docgen-typescript-loader': 'latest',
+    'react-docgen-typescript-webpack-plugin': 'latest',
+    'lint-staged': 'latest',
+    prettier: '^latest',
+    'babel-loader': 'latest',
+    eslint: 'latest',
+    husky: 'latest',
+  };
+
+  appPackage.husky = {
+    hooks: {
+      'pre-commit': 'lint-staged',
+    },
+  };
+  appPackage['lint-staged'] = {
+    '**/*.{js,jsx,ts,tsx}': ['prettier --write', 'eslint --fix', 'git add'],
+  };
+
   const useTypeScript = appPackage.dependencies['typescript'] != null;
 
   // Setup the script rules
@@ -99,11 +133,10 @@ module.exports = function(
     build: 'react-scripts build',
     test: 'react-scripts test',
     eject: 'react-scripts eject',
-  };
-
-  // Setup the eslint config
-  appPackage.eslintConfig = {
-    extends: 'react-app',
+    lint: 'eslint src/**/*.ts src/**/*.tsx',
+    fix:
+      'prettier --write src/**/*.ts src/**/*.tsx && eslint --fix src/**/*.ts src/**/*.tsx',
+    storybook: 'start-storybook -p 6006',
   };
 
   // Setup the browsers list
