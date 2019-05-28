@@ -1,4 +1,5 @@
 # JetBridge Starter Kit
 
-To use:
-`create-react-app myapp --typescript --scripts-version jetbridge-react-scripts
+### To use:
+
+`create-react-app myapp --typescript --scripts-version jetbridge-react-scripts`
