@@ -24,5 +24,6 @@ module.exports = {
     'react/prop-types': 'off', // use TS
     '@typescript-eslint/member-delimiter-style': 'off',
     'jsx-a11y/alt-text': 'off',
+    '@typescript-eslint/prefer-interface': 'off',
   },
 }

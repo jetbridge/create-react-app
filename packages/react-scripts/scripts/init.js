@@ -32,6 +32,10 @@ function isInGitRepository() {
   }
 }
 
+function initStorybook() {
+  execSync('npx -p @storybook/cli sb init');
+}
+
 function isInMercurialRepository() {
   try {
     execSync('hg --cwd . root', { stdio: 'ignore' });
@@ -94,7 +98,9 @@ module.exports = function(
   appPackage.dependencies = {
     ...appPackage.dependencies,
     axios: 'latest',
-    classnames: '2.2.6',
+    classnames: 'latest',
+    '@jetbridge/frontend-core':
+      'git+ssh://git@github.com:jetbridge/frontend-core.git',
   };
 
   appPackage.devDependencies = {
@@ -103,17 +109,14 @@ module.exports = function(
     '@storybook/addon-info': 'latest',
     '@storybook/addon-links': 'latest',
     '@storybook/addons': 'latest',
-    '@storybook/core': 'latest',
-    '@storybook/react': 'latest',
+    '@types/node': 'latest',
+    '@types/react': 'latest',
     '@types/storybook__react': 'latest',
-    'awesome-typescript-loader': 'latest',
-    'react-docgen-typescript-loader': 'latest',
-    'react-docgen-typescript-webpack-plugin': 'latest',
     'lint-staged': 'latest',
-    prettier: '^latest',
-    'babel-loader': 'latest',
+    prettier: 'latest',
     eslint: 'latest',
     husky: 'latest',
+    'babel-loader': '8.0.5',
   };
 
   appPackage.husky = {
@@ -236,6 +239,9 @@ module.exports = function(
     console.log();
     console.log('Initialized a git repository.');
   }
+
+  console.log('Initializing storybook...');
+  initStorybook();
 
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
