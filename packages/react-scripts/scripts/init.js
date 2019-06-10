@@ -32,6 +32,10 @@ function isInGitRepository() {
   }
 }
 
+function initStorybook() {
+  execSync('npx -p @storybook/cli sb init');
+}
+
 function isInMercurialRepository() {
   try {
     execSync('hg --cwd . root', { stdio: 'ignore' });
@@ -91,6 +95,38 @@ module.exports = function(
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
 
+  appPackage.dependencies = {
+    ...appPackage.dependencies,
+    axios: 'latest',
+    classnames: 'latest',
+    '@jetbridge/frontend-core':
+      'git+ssh://git@github.com:jetbridge/frontend-core.git',
+  };
+
+  appPackage.devDependencies = {
+    '@storybook/addon-actions': 'latest',
+    '@storybook/addon-centered': 'latest',
+    '@storybook/addon-info': 'latest',
+    '@storybook/addon-links': 'latest',
+    '@storybook/addons': 'latest',
+    '@types/node': 'latest',
+    '@types/react': 'latest',
+    '@types/storybook__react': 'latest',
+    'lint-staged': 'latest',
+    prettier: 'latest',
+    eslint: 'latest',
+    husky: 'latest',
+  };
+
+  appPackage.husky = {
+    hooks: {
+      'pre-commit': 'lint-staged',
+    },
+  };
+  appPackage['lint-staged'] = {
+    '**/*.{js,jsx,ts,tsx}': ['prettier --write', 'eslint --fix', 'git add'],
+  };
+
   const useTypeScript = appPackage.dependencies['typescript'] != null;
 
   // Setup the script rules
@@ -99,11 +135,9 @@ module.exports = function(
     build: 'react-scripts build',
     test: 'react-scripts test',
     eject: 'react-scripts eject',
-  };
-
-  // Setup the eslint config
-  appPackage.eslintConfig = {
-    extends: 'react-app',
+    lint: 'eslint src/**/*.ts src/**/*.tsx',
+    fix:
+      'prettier --write src/**/*.ts src/**/*.tsx && eslint --fix src/**/*.ts src/**/*.tsx',
   };
 
   // Setup the browsers list
@@ -204,6 +238,9 @@ module.exports = function(
     console.log('Initialized a git repository.');
   }
 
+  console.log('Initializing storybook...');
+  initStorybook();
+
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
   // backward compatibility with old global-cli's.
@@ -255,7 +292,7 @@ module.exports = function(
     );
   }
   console.log();
-  console.log('Happy hacking!');
+  console.log(chalk.green("Let's Make It Happen!"));
 };
 
 function isReactInstalled(appPackage) {
