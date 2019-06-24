@@ -101,6 +101,10 @@ module.exports = function(
     classnames: 'latest',
     '@jetbridge/frontend-core':
       'git+ssh://git@github.com:jetbridge/frontend-core.git',
+    '@sentry/browser': 'latest',
+    '@material-ui/core': 'latest',
+    '@material-ui/icons': 'latest',
+    'react-router-dom': 'latest',
   };
 
   appPackage.devDependencies = {
