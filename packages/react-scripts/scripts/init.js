@@ -115,10 +115,10 @@ module.exports = function(
     '@storybook/addons': 'latest',
     '@types/node': 'latest',
     '@types/react': 'latest',
+    '@types/react-router-dom': 'latest',
     '@types/storybook__react': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
-    eslint: 'latest',
     husky: 'latest',
   };
 

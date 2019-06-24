@@ -4,18 +4,15 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { install } from '@material-ui/styles'
 import * as Sentry from '@sentry/browser'
-install()
 
 const AppContainer = (
-    <Router>
-      <App />
-    </Router>
+  <Router>
+    <App />
+  </Router>
 )
 
-if(process.env.REACT_APP_SENTRY_DSN)
-Sentry.init({ dsn: process.env.REACT_APP_SENTRY_DSN })
+if (process.env.REACT_APP_SENTRY_DSN) Sentry.init({ dsn: process.env.REACT_APP_SENTRY_DSN })
 
 ReactDOM.render(AppContainer, document.getElementById('root'))
 
