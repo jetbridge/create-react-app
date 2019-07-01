@@ -99,6 +99,9 @@ module.exports = function(
     ...appPackage.dependencies,
     axios: 'latest',
     classnames: 'latest',
+    '@material-ui/core': '^4.1.3',
+    '@material-ui/icons': '^4.2.1',
+    '@material-ui/styles': '^4.1.2',
     '@jetbridge/frontend-core':
       'git+ssh://git@github.com:jetbridge/frontend-core.git',
   };
