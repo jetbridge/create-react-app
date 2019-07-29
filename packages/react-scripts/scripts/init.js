@@ -125,7 +125,7 @@ module.exports = function(
     husky: 'latest',
   };
 
-  appPackage.types = 'index.d.ts';
+  appPackage.types = 'src/index.d.ts';
 
   appPackage.husky = {
     hooks: {
