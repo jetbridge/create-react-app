@@ -95,6 +95,7 @@ module.exports = function(
   // Copy over some of the devDependencies
   appPackage.dependencies = appPackage.dependencies || {};
 
+  // JetBridge custom deps
   appPackage.dependencies = {
     ...appPackage.dependencies,
     axios: 'latest',
@@ -117,7 +118,7 @@ module.exports = function(
     '@types/storybook__react': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
-    eslint: 'latest',
+    eslint: '^5.16.0',
     husky: 'latest',
   };
 
