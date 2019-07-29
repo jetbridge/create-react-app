@@ -117,6 +117,7 @@ module.exports = function(
     '@storybook/addon-links': 'latest',
     '@storybook/addons': 'latest',
     '@storybook/react': 'latest',
+    '@storybook/cli': 'latest',
     'storybook-addon-material-ui': 'latest',
     '@types/node': 'latest',
     '@types/react': 'latest',
@@ -147,6 +148,8 @@ module.exports = function(
     test: 'react-scripts test',
     eject: 'react-scripts eject',
     lint: 'eslint src/**/*.ts src/**/*.tsx',
+    storybook: 'start-storybook -p 9009 -s public',
+    'build-storybook': 'build-storybook -s public',
     fix:
       'prettier --write src/**/*.ts src/**/*.tsx && eslint --fix src/**/*.ts src/**/*.tsx',
   };
