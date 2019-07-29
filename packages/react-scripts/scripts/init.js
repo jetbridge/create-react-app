@@ -33,7 +33,8 @@ function isInGitRepository() {
 }
 
 function initStorybook() {
-  // we just configure it manually, big deal
+  // we just configure it manually right now, no big deal
+  // console.log('Initializing storybook...');
   // execSync('npx -p @storybook/cli sb init');
 }
 
@@ -162,7 +163,6 @@ module.exports = function(
     JSON.stringify(appPackage, null, 2) + os.EOL
   );
 
-  console.log('Initializing storybook...');
   initStorybook();
 
   const readmeExists = fs.existsSync(path.join(appPath, 'README.md'));
