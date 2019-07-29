@@ -118,7 +118,7 @@ module.exports = function(
     '@types/storybook__react': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
-    eslint: '^5.16.0',
+    eslint: '^6.1.0',
     husky: 'latest',
   };
 
