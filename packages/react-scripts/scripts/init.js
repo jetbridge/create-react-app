@@ -33,7 +33,8 @@ function isInGitRepository() {
 }
 
 function initStorybook() {
-  execSync('npx -p @storybook/cli sb init');
+  // we just configure it manually, big deal
+  // execSync('npx -p @storybook/cli sb init');
 }
 
 function isInMercurialRepository() {
@@ -115,6 +116,7 @@ module.exports = function(
     '@storybook/addon-info': 'latest',
     '@storybook/addon-links': 'latest',
     '@storybook/addons': 'latest',
+    '@storybook/react': 'latest',
     'storybook-addon-material-ui': 'latest',
     '@types/node': 'latest',
     '@types/react': 'latest',
@@ -125,7 +127,7 @@ module.exports = function(
     husky: 'latest',
   };
 
-  appPackage.types = 'src/index.d.ts';
+  appPackage.types = 'index.d.ts';
 
   appPackage.husky = {
     hooks: {
