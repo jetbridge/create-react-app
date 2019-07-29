@@ -102,9 +102,10 @@ module.exports = function(
     ...appPackage.dependencies,
     axios: 'latest',
     classnames: 'latest',
-    '@material-ui/core': '^4.1.3',
+    'react-router-dom': 'latest',
+    '@material-ui/core': '^4.3.0',
     '@material-ui/icons': '^4.2.1',
-    '@material-ui/styles': '^4.1.2',
+    '@material-ui/styles': '^4.3.0',
     '@jetbridge/frontend-core':
       'git+ssh://git@github.com:jetbridge/frontend-core.git',
   };
@@ -123,6 +124,8 @@ module.exports = function(
     '@types/node': 'latest',
     '@types/react': 'latest',
     '@types/storybook__react': 'latest',
+    '@types/react-router-dom': 'latest',
+    '@types/react-router': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
     eslint: '^6.1.0',

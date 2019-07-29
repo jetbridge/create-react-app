@@ -3,4 +3,4 @@ import { storiesOf } from '@storybook/react'
 
 import App from './app'
 
-storiesOf('App', module).add('Main', () => <App />)
+storiesOf('App', module).add('Initial', () => <App />)
