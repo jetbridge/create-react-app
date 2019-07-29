@@ -1,9 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { muiTheme } from 'storybook-addon-material-ui'
-import { theme } from '../../theme'
 import Home from '.'
+import { ThemeDecorator } from '../../theme/storybookThemeDecorator'
 
 storiesOf('Home', module)
-  .addDecorator(muiTheme([theme]))
+  .addDecorator(ThemeDecorator)
   .add('Initial', () => <Home />)

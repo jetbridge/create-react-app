@@ -120,7 +120,6 @@ module.exports = function(
     '@storybook/addons': 'latest',
     '@storybook/react': 'latest',
     '@storybook/cli': 'latest',
-    'storybook-addon-material-ui': 'latest',
     '@types/node': 'latest',
     '@types/react': 'latest',
     '@types/storybook__react': 'latest',
@@ -289,9 +288,10 @@ module.exports = function(
   console.log(chalk.cyan(`  ${displayedCommand} test`));
   console.log('    Starts the test runner.');
   console.log();
-  console.log('We suggest that you begin by typing:');
+  console.log('Begin by typing:');
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
+  console.log(`  ${chalk.cyan(`${displayedCommand}`)}`);
   console.log(`  ${chalk.cyan(`${displayedCommand} start`)}`);
   if (readmeExists) {
     console.log();
