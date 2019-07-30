@@ -33,7 +33,9 @@ function isInGitRepository() {
 }
 
 function initStorybook() {
-  execSync('npx -p @storybook/cli sb init');
+  // we just configure it manually right now, no big deal
+  // console.log('Initializing storybook...');
+  // execSync('npx -p @storybook/cli sb init');
 }
 
 function isInMercurialRepository() {
@@ -108,11 +110,16 @@ module.exports = function(
   };
 
   appPackage.devDependencies = {
+    'babel-loader': '8.0.5',
+    'awesome-typescript-loader': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
     '@storybook/addon-info': 'latest',
     '@storybook/addon-links': 'latest',
     '@storybook/addons': 'latest',
+    '@storybook/react': 'latest',
+    '@storybook/cli': 'latest',
+    'storybook-addon-material-ui': 'latest',
     '@types/node': 'latest',
     '@types/react': 'latest',
     '@types/storybook__react': 'latest',
@@ -121,6 +128,8 @@ module.exports = function(
     eslint: '^6.1.0',
     husky: 'latest',
   };
+
+  appPackage.types = 'index.d.ts';
 
   appPackage.husky = {
     hooks: {
@@ -140,6 +149,8 @@ module.exports = function(
     test: 'react-scripts test',
     eject: 'react-scripts eject',
     lint: 'eslint src/**/*.ts src/**/*.tsx',
+    storybook: 'start-storybook -p 9009 -s public',
+    'build-storybook': 'build-storybook -s public',
     fix:
       'prettier --write src/**/*.ts src/**/*.tsx && eslint --fix src/**/*.ts src/**/*.tsx',
   };
@@ -151,6 +162,8 @@ module.exports = function(
     path.join(appPath, 'package.json'),
     JSON.stringify(appPackage, null, 2) + os.EOL
   );
+
+  initStorybook();
 
   const readmeExists = fs.existsSync(path.join(appPath, 'README.md'));
   if (readmeExists) {
@@ -242,9 +255,6 @@ module.exports = function(
     console.log('Initialized a git repository.');
   }
 
-  console.log('Initializing storybook...');
-  initStorybook();
-
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
   // backward compatibility with old global-cli's.
@@ -265,6 +275,9 @@ module.exports = function(
   console.log(chalk.cyan(`  ${displayedCommand} start`));
   console.log('    Starts the development server.');
   console.log();
+  console.log(chalk.cyan(`  ${displayedCommand} storybook`));
+  console.log('    Starts the storybook component library server.');
+  console.log();
   console.log(
     chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}build`)
   );
@@ -272,16 +285,6 @@ module.exports = function(
   console.log();
   console.log(chalk.cyan(`  ${displayedCommand} test`));
   console.log('    Starts the test runner.');
-  console.log();
-  console.log(
-    chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}eject`)
-  );
-  console.log(
-    '    Removes this tool and copies build dependencies, configuration files'
-  );
-  console.log(
-    '    and scripts into the app directory. If you do this, you can’t go back!'
-  );
   console.log();
   console.log('We suggest that you begin by typing:');
   console.log();
