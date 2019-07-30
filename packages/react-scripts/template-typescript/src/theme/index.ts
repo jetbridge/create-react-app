@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
 // main google font to apply to all elements by default
-export const primaryFont = 'Montserrat'
+export const primaryFont = process.env.REACT_APP_DEFAULT_FONT
 
 // our theme
 export const theme = createMuiTheme({
