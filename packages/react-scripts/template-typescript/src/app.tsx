@@ -3,8 +3,11 @@ import { MuiThemeProvider, CssBaseline } from '@material-ui/core'
 import { theme } from './theme'
 import { BrowserRouter } from 'react-router-dom'
 import Routes from './route'
+import useGlobalCSS from './theme/globalCSS'
 
 const App: React.FC = () => {
+  useGlobalCSS()
+
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
