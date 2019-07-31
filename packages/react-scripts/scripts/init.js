@@ -102,9 +102,10 @@ module.exports = function(
     ...appPackage.dependencies,
     axios: 'latest',
     classnames: 'latest',
-    '@material-ui/core': '^4.1.3',
+    'react-router-dom': 'latest',
+    '@material-ui/core': '^4.3.0',
     '@material-ui/icons': '^4.2.1',
-    '@material-ui/styles': '^4.1.2',
+    '@material-ui/styles': '^4.3.0',
     '@jetbridge/frontend-core':
       'git+ssh://git@github.com:jetbridge/frontend-core.git',
   };
@@ -119,10 +120,11 @@ module.exports = function(
     '@storybook/addons': 'latest',
     '@storybook/react': 'latest',
     '@storybook/cli': 'latest',
-    'storybook-addon-material-ui': 'latest',
     '@types/node': 'latest',
     '@types/react': 'latest',
     '@types/storybook__react': 'latest',
+    '@types/react-router-dom': 'latest',
+    '@types/react-router': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
     eslint: '^6.1.0',
@@ -286,9 +288,10 @@ module.exports = function(
   console.log(chalk.cyan(`  ${displayedCommand} test`));
   console.log('    Starts the test runner.');
   console.log();
-  console.log('We suggest that you begin by typing:');
+  console.log('Begin by typing:');
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
+  console.log(`  ${chalk.cyan(`${displayedCommand}`)}`);
   console.log(`  ${chalk.cyan(`${displayedCommand} start`)}`);
   if (readmeExists) {
     console.log();
