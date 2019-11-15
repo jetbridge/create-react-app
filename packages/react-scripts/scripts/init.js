@@ -103,15 +103,15 @@ module.exports = function(
     axios: 'latest',
     classnames: 'latest',
     'react-router-dom': 'latest',
-    '@material-ui/core': '^4.3.0',
-    '@material-ui/icons': '^4.2.1',
-    '@material-ui/styles': '^4.3.0',
-    '@jetbridge/frontend-core':
-      'git+ssh://git@github.com:jetbridge/frontend-core.git',
+    '@material-ui/core': 'latest',
+    '@material-ui/icons': 'latest',
+    '@material-ui/styles': 'latest',
+    '@jetkit/react': 'latest',
   };
 
   appPackage.devDependencies = {
-    'babel-loader': '8.0.5',
+    'babel-loader': '8.0.6',
+    'babel-eslint': '10.0.2',
     'awesome-typescript-loader': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
