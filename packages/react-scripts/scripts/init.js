@@ -122,12 +122,11 @@ module.exports = function(
     '@storybook/cli': 'latest',
     '@types/node': 'latest',
     '@types/react': 'latest',
-    '@types/storybook__react': 'latest',
     '@types/react-router-dom': 'latest',
     '@types/react-router': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
-    eslint: '^6.1.0',
+    eslint: 'latest',
     husky: 'latest',
   };
 

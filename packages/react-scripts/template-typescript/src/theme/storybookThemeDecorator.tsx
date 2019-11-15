@@ -1,19 +1,22 @@
 import * as React from 'react'
 import { MuiThemeProvider } from '@material-ui/core/styles'
-import { RenderFunction } from '@storybook/react'
 import { theme, primaryFont } from '.'
 import useGlobalCSS from './globalCSS'
+import { makeDecorator } from '@storybook/addons'
 
-const withTheme = (story: RenderFunction) =>
-  React.createElement(() => {
-    useGlobalCSS()
+export default makeDecorator({
+  name: 'withMaterialTheme',
+  parameterName: 'materialTheme',
+  wrapper: (storyFn, context, { parameters }) => {
+    return React.createElement(() => {
+      useGlobalCSS()
 
-    return (
-      <MuiThemeProvider theme={theme}>
-        <link href={`https://fonts.googleapis.com/css?family=${primaryFont}:400,500&display=swap`} rel="stylesheet" />
-        {story()}
-      </MuiThemeProvider>
-    )
-  })
-
-export default withTheme
+      return (
+        <MuiThemeProvider theme={theme}>
+          <link href={`https://fonts.googleapis.com/css?family=${primaryFont}:400,500&display=swap`} rel="stylesheet" />
+          {storyFn(context)}
+        </MuiThemeProvider>
+      )
+    })
+  },
+})
