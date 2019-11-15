@@ -295,7 +295,9 @@ module.exports = function(
   console.log(chalk.cyan(`  ${displayedCommand} start`));
   console.log('    Starts the development server.');
   console.log();
-  console.log(chalk.cyan(`  ${displayedCommand} storybook`));
+  console.log(
+    chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}storybook`)
+  );
   console.log('    Starts the storybook component library server.');
   console.log();
   console.log(
@@ -309,7 +311,7 @@ module.exports = function(
   console.log('Begin by typing:');
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
-  console.log(`  ${chalk.cyan(`${displayedCommand}`)}`);
+  console.log(`  ${chalk.cyan(`${displayedCommand}${useYarn ? '' : ' i'}`)}`);
   console.log(`  ${chalk.cyan(`${displayedCommand} start`)}`);
   if (readmeExists) {
     console.log();
