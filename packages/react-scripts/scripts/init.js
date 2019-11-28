@@ -111,7 +111,7 @@ module.exports = function(
 
   appPackage.devDependencies = {
     'babel-loader': '8.0.6',
-    'babel-eslint': '10.0.2',
+    'babel-eslint': '10.0.3',
     'awesome-typescript-loader': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
