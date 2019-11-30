@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { theme, primaryFont } from '.'
-import useGlobalCSS from './globalCSS'
+import useGlobalCSS from './GlobalCSS'
 import { makeDecorator } from '@storybook/addons'
 
 export default makeDecorator({

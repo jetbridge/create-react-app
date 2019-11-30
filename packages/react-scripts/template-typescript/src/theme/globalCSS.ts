@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '../component/home/node_modules/@material-ui/styles'
 import { primaryFont } from '.'
 
 /**

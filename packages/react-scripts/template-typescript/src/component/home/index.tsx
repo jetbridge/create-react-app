@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { makeStyles } from '@material-ui/styles'
-import { Theme } from '@material-ui/core/styles/createMuiTheme'
+import * as React from './node_modules/react'
+import { makeStyles } from './node_modules/@material-ui/styles'
+import { Theme } from './node_modules/@material-ui/core/styles/createMuiTheme'
 
 const useStyles = makeStyles((theme: Theme) => ({
   hero: {

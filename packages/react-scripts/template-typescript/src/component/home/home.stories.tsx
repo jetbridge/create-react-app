@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React from './node_modules/react'
+import { storiesOf } from './node_modules/@storybook/react'
 import Home from '.'
-import themeDecorator from '../../theme/storybookThemeDecorator'
+import themeDecorator from '../../theme/StorybookThemeDecorator'
 
 storiesOf('Home', module)
   .addDecorator(themeDecorator)
