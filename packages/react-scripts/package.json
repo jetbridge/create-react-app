@@ -1,6 +1,6 @@
 {
   "name": "jetbridge-react-scripts",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
@@ -30,8 +30,8 @@
   "dependencies": {
     "@babel/core": "7.6.0",
     "@svgr/webpack": "4.3.2",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
