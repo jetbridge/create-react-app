@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Home from '../component/home'
+import Home from '../component/Home'
 
 interface IHomePageProps {}
 
