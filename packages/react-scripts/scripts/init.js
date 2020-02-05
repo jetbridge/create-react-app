@@ -34,8 +34,8 @@ function isInGitRepository() {
 
 function initStorybook() {
   // we just configure it manually right now, no big deal
-  // console.log('Initializing storybook...');
-  // execSync('npx -p @storybook/cli sb init');
+  console.log('Initializing storybook...');
+  execSync('npx -p @storybook/cli sb init --type react_scripts');
 }
 
 function isInMercurialRepository() {
@@ -185,11 +185,13 @@ module.exports = function(
     'awesome-typescript-loader': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
-    '@storybook/addon-info': 'latest',
+    '@storybook/addon-docs': 'latest',
     '@storybook/addon-links': 'latest',
+    '@storybook/preset-create-react-app': 'latest',
     '@storybook/addons': 'latest',
     '@storybook/react': 'latest',
     '@storybook/cli': 'latest',
+    'react-docgen-typescript-loader': 'latest',
     '@types/node': 'latest',
     '@types/react': 'latest',
     '@types/react-router-dom': 'latest',
@@ -257,8 +259,6 @@ module.exports = function(
     path.join(appPath, 'package.json'),
     JSON.stringify(appPackage, null, 2) + os.EOL
   );
-
-  initStorybook();
 
   const readmeExists = fs.existsSync(path.join(appPath, 'README.md'));
   if (readmeExists) {
@@ -374,6 +374,8 @@ module.exports = function(
     console.log();
     console.log('Initialized a git repository.');
   }
+
+  // initStorybook();
 
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
