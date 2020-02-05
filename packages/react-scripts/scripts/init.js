@@ -185,7 +185,7 @@ module.exports = function(
     'awesome-typescript-loader': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
-    '@storybook/addon-info': 'latest',
+    '@storybook/addon-docs': 'latest',
     '@storybook/addon-links': 'latest',
     '@storybook/preset-create-react-app': 'latest',
     '@storybook/addons': 'latest',
