@@ -223,15 +223,21 @@ module.exports = function(
   // Setup the script rules
   appPackage.scripts = Object.assign(
     {
-      start: 'react-scripts start',
+      start: 'PORT=3010 react-scripts start',
       build: 'react-scripts build',
       test: 'react-scripts test',
       eject: 'react-scripts eject',
+
+      // JB additions:
       lint: 'eslint src/**/*.ts src/**/*.tsx',
       storybook: 'start-storybook -p 9009 -s public',
       'build-storybook': 'build-storybook -s public',
       fix:
-        'prettier --write src/**/*.ts src/**/*.tsx && eslint --fix src/**/*.ts src/**/*.tsx',
+        "prettier --write '{*.{ts,js},!(node_modules*)**/*.{ts,tsx,js,jsx}}' && eslint --fix src/**/*.ts src/**/*.tsx",
+      'fmt:check': 'prettier --check src/**/*.{js,jsx,ts,tsx}',
+      'coverage:jest': 'jest --coverage',
+      'cypress:open': 'cypress open',
+      'cypress:run': 'cypress run',
     },
     templateScripts
   );

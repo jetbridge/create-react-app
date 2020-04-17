@@ -1,11 +1,11 @@
-import { makeStyles } from '@material-ui/styles'
-import { primaryFont } from '.'
+import { makeStyles } from "@material-ui/styles"
+import { primaryFont } from "."
 
 /**
  * A hook that installs global CSS overrides.
  */
 const useGlobalCSS = makeStyles({
-  '@global': {
+  "@global": {
     body: {
       fontFamily: primaryFont,
     },
