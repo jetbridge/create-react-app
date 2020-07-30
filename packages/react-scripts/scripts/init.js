@@ -187,6 +187,7 @@ module.exports = function(
   appPackage.devDependencies = {
     'babel-loader': '8.1.0',
     'babel-eslint': '10.1.0',
+    'eslint-plugin-react-app': 'latest',
     'awesome-typescript-loader': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
@@ -230,11 +231,11 @@ module.exports = function(
 
       // JB additions:
       lint: 'eslint src/**/*.ts src/**/*.tsx',
-      storybook: 'start-storybook -p 9009 -s public',
-      'build-storybook': 'build-storybook -s public',
       fix:
         "prettier --write '{*.{ts,js},!(node_modules*)**/*.{ts,tsx,js,jsx}}' && eslint --fix src/**/*.ts src/**/*.tsx",
       'fmt:check': 'prettier --check src/**/*.{js,jsx,ts,tsx}',
+      storybook: 'start-storybook -p 9009 -s public',
+      'build-storybook': 'build-storybook -s public',
       'coverage:jest': 'jest --coverage',
       'cypress:open': 'cypress open',
       'cypress:run': 'cypress run',
