@@ -1,6 +1,6 @@
 {
-  "name": "@jetbridge/cra-template-typescript",
-  "version": "1.1.9",
+  "name": "@jetkit/cra-template-typescript",
+  "version": "1.2.0",
   "keywords": [
     "react",
     "create-react-app",
