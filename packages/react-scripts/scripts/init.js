@@ -204,7 +204,7 @@ module.exports = function(
     '@types/react-router': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
-    eslint: 'latest',
+    eslint: '^6.6.0',
     husky: 'latest',
   };
 
