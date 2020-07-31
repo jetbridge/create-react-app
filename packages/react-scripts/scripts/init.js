@@ -187,6 +187,7 @@ module.exports = function(
   appPackage.devDependencies = {
     'babel-loader': '8.1.0',
     'babel-eslint': '10.1.0',
+    'eslint-plugin-react-app': 'latest',
     'awesome-typescript-loader': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
@@ -203,7 +204,7 @@ module.exports = function(
     '@types/react-router': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
-    eslint: 'latest',
+    eslint: '^6.6.0',
     husky: 'latest',
   };
 
@@ -223,15 +224,21 @@ module.exports = function(
   // Setup the script rules
   appPackage.scripts = Object.assign(
     {
-      start: 'react-scripts start',
+      start: 'PORT=3010 react-scripts start',
       build: 'react-scripts build',
       test: 'react-scripts test',
       eject: 'react-scripts eject',
+
+      // JB additions:
       lint: 'eslint src/**/*.ts src/**/*.tsx',
+      fix:
+        "prettier --write '{*.{ts,js},!(node_modules*)**/*.{ts,tsx,js,jsx}}' && eslint --fix src/**/*.ts src/**/*.tsx",
+      'fmt:check': 'prettier --check src/**/*.{js,jsx,ts,tsx}',
       storybook: 'start-storybook -p 9009 -s public',
       'build-storybook': 'build-storybook -s public',
-      fix:
-        'prettier --write src/**/*.ts src/**/*.tsx && eslint --fix src/**/*.ts src/**/*.tsx',
+      'coverage:jest': 'jest --coverage',
+      'cypress:open': 'cypress open',
+      'cypress:run': 'cypress run',
     },
     templateScripts
   );
