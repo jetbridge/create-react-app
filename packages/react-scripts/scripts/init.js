@@ -218,10 +218,12 @@ module.exports = function (
     '@types/react': 'latest',
     '@types/react-router-dom': 'latest',
     '@types/react-router': 'latest',
+    '@types/react-dom': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
     eslint: '^7.11.0',
     husky: 'latest',
+    'web-vitals': 'latest',
   };
 
   appPackage.types = 'index.d.ts';
