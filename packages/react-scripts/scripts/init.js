@@ -221,7 +221,7 @@ module.exports = function (
     '@types/react-router': 'latest',
     'lint-staged': 'latest',
     prettier: 'latest',
-    eslint: '^6.6.0',
+    eslint: '^7.11.0',
     husky: 'latest',
   };
 
