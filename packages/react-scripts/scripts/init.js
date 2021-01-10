@@ -193,13 +193,13 @@ module.exports = function (
   // JetBridge custom deps
   appPackage.dependencies = {
     ...appPackage.dependencies,
-    axios: '^0.19.0',
+    axios: '^0.21.1',
     classnames: 'latest',
     'react-router-dom': 'latest',
     '@material-ui/core': 'latest',
     '@material-ui/icons': 'latest',
     '@material-ui/styles': 'latest',
-    '@jetkit/react': 'latest',
+    '@jetkit/react': '>=3',
   };
 
   appPackage.devDependencies = {
