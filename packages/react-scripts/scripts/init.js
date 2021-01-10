@@ -205,7 +205,6 @@ module.exports = function (
   appPackage.devDependencies = {
     'babel-loader': '8.1.0',
     'babel-eslint': '10.1.0',
-    'eslint-plugin-react-app': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
     '@storybook/addon-docs': 'latest',
