@@ -2,7 +2,7 @@
 
 ### To use:
 
-`create-react-app myapp --template @jetkit/cra-template-typescript --scripts-version jetbridge-react-scripts --use-npm`
+`npx create-react-app myapp --template @jetkit/cra-template-typescript --scripts-version jetbridge-react-scripts --use-npm`
 
 ### Docs:
 
