@@ -206,7 +206,6 @@ module.exports = function (
     'babel-loader': '8.1.0',
     'babel-eslint': '10.1.0',
     'eslint-plugin-react-app': 'latest',
-    'awesome-typescript-loader': 'latest',
     '@storybook/addon-actions': 'latest',
     '@storybook/addon-centered': 'latest',
     '@storybook/addon-docs': 'latest',
